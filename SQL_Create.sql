@@ -45,6 +45,9 @@ CREATE TABLE Cart
   FOREIGN KEY (OrderID) REFERENCES Orders(OrderID)
 );
 
+ALTER TABLE Customer
+ADD CONSTRAINT check_Age CHECK (DATEDIFF(year, Birth_Date, GETDATE()) >= 18);
+
 -- Inserting data into Customer table
 INSERT INTO Customer ( Email, Phone_Number, First_Name, Last_Name, UserName, Password, Birth_Date, Loyalty_Points) VALUES
 ('john.doe@example.com', 123456, 'John', 'Doe', 'johndoe', 'johnd123', '1985-02-15', 120),
