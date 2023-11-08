@@ -1,10 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import GalleryCard3 from './gallery-card3'
 import projectStyles from '.style.module.css'
-import styles from './home.module.css'
+import styles from './main-page.module.css'
 
-const Home = (props) => {
+const MainPage = (props) => {
   return (
     <div className={styles['container']}>
       <div className={styles['header']}>
@@ -17,10 +18,14 @@ const Home = (props) => {
           <div className={styles['container1']}>
             <div data-thq="thq-navbar-nav" className={styles['desktop-menu']}>
               <nav className={styles['links']}>
-                <span>Home</span>
-                <span className={styles['nav2']}>Products</span>
+                <Link to="/main-page">Home</Link>
+                <Link to="/products" className={styles['nav2']}>
+                  Products
+                </Link>
                 <span className={styles['nav3']}>Order</span>
-                <span className={styles['nav4']}>Account</span>
+                <Link to="/account" className={styles['nav4']}>
+                  Account
+                </Link>
                 <span className={styles['nav5']}></span>
               </nav>
               <div className={styles['buttons']}>
@@ -96,33 +101,24 @@ const Home = (props) => {
         </header>
       </div>
       <div className={styles['hero']}>
-        <div className={styles['hero1']}>
-          <div className={styles['container2']}>
-            <h1
-              className={` ${styles['hero-heading']} ${projectStyles['heading1']} `}
+        <div className={styles['container2']}>
+          <div className={styles['btn-group']}>
+            <button
+              className={` ${styles['hero-button1']} ${projectStyles['button']} `}
             >
-              <span className={styles['text']}>
-                Welcome to our Ecigs Shop in Lakatamia
-              </span>
-              <br></br>
-              <br></br>
-            </h1>
-            <span className={styles['hero-sub-heading']}>
-              Discover a wide range of electronic cigarettes and accessories
-            </span>
-            <div className={styles['btn-group']}>
-              <button
-                className={` ${styles['hero-button1']} ${projectStyles['button']} `}
-              >
-                Get Started
-              </button>
-              <button
-                className={` ${styles['hero-button2']} ${projectStyles['button']} `}
-              >
-                Learn More →
-              </button>
-            </div>
+              Get Started
+            </button>
+            <button
+              className={` ${styles['hero-button2']} ${projectStyles['button']} `}
+            >
+              Learn More →
+            </button>
           </div>
+          <span
+            className={` ${styles['text']} ${projectStyles['nunito-bold']} `}
+          >
+            WELCOME TO MY-ECIG SHOP IN LAKATAMIA
+          </span>
         </div>
       </div>
       <div className={styles['banner']}>
@@ -145,7 +141,7 @@ const Home = (props) => {
         <div className={styles['details1']}>
           <div className={styles['container3']}>
             <span
-              className={` ${styles['text3']} ${projectStyles['section-title']} `}
+              className={` ${styles['text1']} ${projectStyles['section-title']} `}
             >
               <span>Details</span>
               <br></br>
@@ -180,62 +176,62 @@ const Home = (props) => {
           </span>
           <div className={styles['container4']}>
             <GalleryCard3
-              image_src="https://images.unsplash.com/photo-1542820060-a56821e07e6a?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTI3OTYyOHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
+              imageSrc="https://images.unsplash.com/photo-1542820060-a56821e07e6a?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTI3OTYyOHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
               rootClassName="rootClassName"
             ></GalleryCard3>
             <div className={styles['container5']}></div>
             <GalleryCard3
-              image_src="https://p7.hiclipart.com/preview/991/923/724/train-rail-transport-valley-railroad-passenger-car-steam-locomotive-train-vector.jpg"
+              imageSrc="https://p7.hiclipart.com/preview/991/923/724/train-rail-transport-valley-railroad-passenger-car-steam-locomotive-train-vector.jpg"
               rootClassName="rootClassName1"
             ></GalleryCard3>
             <GalleryCard3
-              image_src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTI3OTYyOHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
+              imageSrc="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTI3OTYyOHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
               rootClassName="rootClassName3"
             ></GalleryCard3>
             <GalleryCard3
-              image_src="https://images.unsplash.com/photo-1472646189317-418747480cd6?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTI3OTYyOHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
+              imageSrc="https://images.unsplash.com/photo-1472646189317-418747480cd6?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTI3OTYyOHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
               rootClassName="rootClassName2"
             ></GalleryCard3>
             <GalleryCard3
-              image_src="https://images.unsplash.com/photo-1555959304-4cfdc80a15d8?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTI3OTYyOHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
+              imageSrc="https://images.unsplash.com/photo-1555959304-4cfdc80a15d8?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTI3OTYyOHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
               rootClassName="rootClassName4"
             ></GalleryCard3>
             <GalleryCard3
-              image_src="https://images.unsplash.com/photo-1621009063622-4467e453c3c1?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTI3OTYyOHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
+              imageSrc="https://images.unsplash.com/photo-1621009063622-4467e453c3c1?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTI3OTYyOHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
               rootClassName="rootClassName5"
             ></GalleryCard3>
             <GalleryCard3
-              image_src="https://images.unsplash.com/photo-1528809015549-a0f8d9ab5ab1?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTI3OTYyOHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
+              imageSrc="https://images.unsplash.com/photo-1528809015549-a0f8d9ab5ab1?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTI3OTYyOHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
               rootClassName="rootClassName6"
             ></GalleryCard3>
             <GalleryCard3
-              image_src="https://images.unsplash.com/photo-1517590727156-5d3efb6ed24e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTI3OTYyOHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
+              imageSrc="https://images.unsplash.com/photo-1517590727156-5d3efb6ed24e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTI3OTYyOHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
               rootClassName="rootClassName7"
             ></GalleryCard3>
             <GalleryCard3
-              image_src="https://images.unsplash.com/photo-1566915541858-48b56240e292?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTI3OTYyOHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
+              imageSrc="https://images.unsplash.com/photo-1566915541858-48b56240e292?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTI3OTYyOHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
               rootClassName="rootClassName8"
             ></GalleryCard3>
             <GalleryCard3
-              image_src="https://images.unsplash.com/photo-1519232438710-de6b20546179?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTI3OTYyOHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
+              imageSrc="https://images.unsplash.com/photo-1519232438710-de6b20546179?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTI3OTYyOHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
               rootClassName="rootClassName9"
             ></GalleryCard3>
             <GalleryCard3
-              image_src="https://images.unsplash.com/photo-1579165466814-e646cfa4a3be?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTI3OTYyOHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
+              imageSrc="https://images.unsplash.com/photo-1579165466814-e646cfa4a3be?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTI3OTYyOHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
               rootClassName="rootClassName10"
             ></GalleryCard3>
             <GalleryCard3
-              image_src="https://images.unsplash.com/photo-1541029071515-84cc54f84dc5?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTI3OTYyOHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
+              imageSrc="https://images.unsplash.com/photo-1541029071515-84cc54f84dc5?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY5OTI3OTYyOHw&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=400"
               rootClassName="rootClassName11"
             ></GalleryCard3>
             <img
-              src="/great-mountains_20-60-300h.jpg"
               alt="image"
+              src="/great-mountains_20-60-300h.jpg"
               className={styles['image1']}
             />
             <img
-              src="/kit-z200-zeus-200-geekvape-black-400h.png"
               alt="image"
+              src="/kit-z200-zeus-200-geekvape-black-400h.png"
               className={styles['image2']}
             />
             <div className={styles['container6']}></div>
@@ -258,7 +254,7 @@ const Home = (props) => {
           </div>
           <div className={styles['separator']}></div>
           <div className={styles['container8']}>
-            <span className={styles['text6']}>
+            <span className={styles['text4']}>
               © 2023 myCompany, All Rights Reserved.
             </span>
             <div className={styles['icon-group1']}>
@@ -288,4 +284,4 @@ const Home = (props) => {
   )
 }
 
-export default Home
+export default MainPage
