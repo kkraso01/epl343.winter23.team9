@@ -1,49 +1,41 @@
-CREATE TABLE dbo.Customer
+CREATE TABLE Customer
 (
-  Email VARCHAR(50) NOT NULL,
-  CHECK (Email LIKE '%@%'),
-  Phone_Number VARCHAR(8) NOT NULL,
-  CHECK (Phone_Number LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
+  Email VARCHAR(30) NOT NULL, CHECK (Email LIKE '%@%.com'),
+  Phone_Number INT NOT NULL, CHECK (Phone_Number LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
   First_Name VARCHAR(15) NOT NULL, 
   Last_Name VARCHAR(15) NOT NULL,
-  UserName VARCHAR(20) NOT NULL,
-  Password VARCHAR(20) NOT NULL, 
-  CHECK (LEN(Password) BETWEEN 8 AND 20),
+  UserName VARCHAR(10) NOT NULL,
+  Password VARCHAR(10) NOT NULL, 
   Birth_Date DATE NOT NULL,
-  Loyalty_Points INT NOT NULL,
-  CHECK(Loyalty_Points >= 0),
-  CONSTRAINT [PK_UserName] PRIMARY KEY 
-  ([UserName] ASC)
+  Loyalty_Points INT NOT NULL, CHECK(Loyalty_Points >=0),
+  PRIMARY KEY (UserName),
+
 );
 
-CREATE TABLE dbo.Product
+
+CREATE TABLE Product
 (
-  Product_Name VARCHAR(50) NOT NULL,
+  Product_Name VARCHAR(30) NOT NULL,
   PID INT NOT NULL,
-  Price INT NOT NULL,
-  CHECK (Price >= 0),
-  Description VARCHAR(100) NOT NULL DEFAULT 'No item description',
-  Quantity INT NOT NULL,
-  CHECK (Quantity >= 0),
-  Category VARCHAR(30) NOT NULL,
-  CHECK (Category IN ('Mod', 'Atomizer', 'Battery', 'Liquid', 'Booster', 'Coil', 'Pod')),
-  Popularity FLOAT NOT NULL,
-  CHECK (Popularity BETWEEN 1.0 AND 10.0),
+  Price INT NOT NULL, CHECK(Price >=0),
+  Description VARCHAR(50) NOT NULL, DEFAULT 'No item description',
+  Quantity INT NOT NULL, CHECK(Quantity>=0),
+  Category VARCHAR(30) NOT NULL, CHECK (Category IN ('Mod', 'Atomizer', 'Battery', 'Liquid', 'Booster', 'Coil', 'Pod')),
+  Popularity FLOAT NOT NULL, CHECK(Popularity BETWEEN 1.0 and 10.0),
   PRIMARY KEY (PID)
 );
 
-CREATE TABLE dbo.Orders
+CREATE TABLE Orders
 (
   OrderID INT NOT NULL,
   Status VARCHAR(15) NOT NULL,
-  UserName VARCHAR(20) NOT NULL,
   Date DATE NOT NULL,
   ID INT NOT NULL,
   PRIMARY KEY (OrderID),
-  FOREIGN KEY (UserName) REFERENCES dbo.Customer(UserName)
+  FOREIGN KEY (UserName) REFERENCES Customer(UserName)
 );
 
-CREATE TABLE dbo.Cart
+CREATE TABLE Cart
 (
   Total_Amount INT NOT NULL,
   PID INT NOT NULL,
@@ -66,3 +58,6 @@ WITH
     FIRSTROW = 2,
     TABLOCK
 );
+
+ALTER TABLE Customer
+ADD CONSTRAINT check_Age CHECK (DATEDIFF(year, Birth_Date, GETDATE()) >= 18);
