@@ -41,21 +41,23 @@ CREATE TABLE Cart
   PID INT NOT NULL,
   OrderID INT NOT NULL,
   PRIMARY KEY (PID, OrderID),
-  FOREIGN KEY (PID) REFERENCES Product(PID),
-  FOREIGN KEY (OrderID) REFERENCES Orders(OrderID)
+  FOREIGN KEY (PID) REFERENCES dbo.Product(PID),
+  FOREIGN KEY (OrderID) REFERENCES dbo.Orders(OrderID)
+);
+
+
+ALTER TABLE dbo.Customer
+ADD CONSTRAINT check_Age CHECK (DATEDIFF(year, Birth_Date, GETDATE()) >= 18);
+
+BULK INSERT EPL343.dbo.Customer
+FROM 'G:\My Drive\UCY\UNIVERSITY(5TH semester)\EPL343\Big fucking project\epl343.winter23.team9\CustomerData.csv'
+WITH
+(
+    FIELDTERMINATOR = ',',  -- Change to '\t' if your fields are tab-separated
+    ROWTERMINATOR = '\r\n',   -- Windows-style newline '\r\n' might be needed
+    FIRSTROW = 2,
+    TABLOCK
 );
 
 ALTER TABLE Customer
 ADD CONSTRAINT check_Age CHECK (DATEDIFF(year, Birth_Date, GETDATE()) >= 18);
-
--- Inserting data into Customer table
-INSERT INTO Customer ( Email, Phone_Number, First_Name, Last_Name, UserName, Password, Birth_Date, Loyalty_Points) VALUES
-('john.doe@example.com', 123456, 'John', 'Doe', 'johndoe', 'johnd123', '1985-02-15', 120),
-('jane.smith@example.com', 234567, 'Jane', 'Smith', 'janesmith', 'janes123', '1990-06-09', 340),
-('bob.jones@example.com', 345678, 'Bob', 'Jones', 'bobjones', 'bobj123', '1978-08-23', 220);
-
--- Inserting data into Product table
-INSERT INTO Product (Product_Name, PID, Price, Description, Quantity, Category, Popularity) VALUES
-('Widget A', 1, 1999, 'A useful widget', 50, 'Gadgets', 4.5),
-('Gizmo B', 2, 2999, 'A fancy gizmo', 30, 'Gadgets', 3.8),
-('Thing C', 3, 999, 'An essential thing', 100, 'Misc', 4.9);
