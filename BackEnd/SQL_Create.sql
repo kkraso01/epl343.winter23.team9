@@ -12,7 +12,8 @@ CREATE TABLE dbo.Customer
   Birth_Date DATE NOT NULL,
   Loyalty_Points INT NOT NULL,
   CHECK(Loyalty_Points >= 0),
-  PRIMARY KEY (UserName)
+  CONSTRAINT [PK_UserName] PRIMARY KEY 
+  ([UserName] ASC)
 );
 
 CREATE TABLE dbo.Product
