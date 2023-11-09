@@ -1,4 +1,5 @@
 --create customer table
+USE DB
 CREATE TABLE [dbo].CUSTOMER (
   Email VARCHAR(30) NOT NULL,
   CHECK (Email LIKE '%@%.com'),
