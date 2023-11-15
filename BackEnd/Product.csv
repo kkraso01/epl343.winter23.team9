@@ -1,51 +1,37 @@
-Product_Name,PID,Price,Description,Quantity,Category,Popularity
-Royal Knight's-spur,1,39,,75,Coil,4
-Roughhairy Maiden Fern,2,32,,73,Pod,1
-Orthilia,3,12,Souvla,34,Booster,2
-Alpine Leafybract Aster,4,46,Souvla,64,Battery,3
-Thrift Mock Goldenweed,5,83,,34,Liquid,2
-Spreading Dewberry,6,24,Souvla,62,Battery,5
-Creeping Thyme,7,71,Souvla,21,Pod,4
-Palestine Clover,8,22,Souvla,52,Atomizer,10
-Agroelymus,9,62,Souvla,52,Liquid,2
-Parry Horkelia,10,61,Souvla,37,Liquid,4
-Earleaf Brickellbush,11,59,Souvla,98,Booster,7
-Hybrid Ladyslipper,12,78,,82,Mod,1
-Gelatinous Skin Lichen,13,75,Souvla,55,Mod,5
-Roundleaf Blolly,14,50,Souvla,36,Liquid,9
-Resindot Sunflower,15,88,Souvla,31,Pod,2
-Creeping Lady's Nightcap,16,48,Souvla,19,Coil,10
-Water Medick,17,32,Souvla,23,Mod,9
-Bolander's Reedgrass,18,21,Souvla,34,Mod,9
-Fortune`s Osmanthus,19,14,Souvla,16,Mod,6
-Dalmatian Toadflax,20,10,,51,Mod,5
-Quebracho,21,50,Souvla,95,Mod,7
-Na Pali Sandmat,22,92,Souvla,73,Booster,4
-Callistephus,23,74,Souvla,23,Mod,3
-Tall Morning-glory,24,43,Souvla,91,Atomizer,3
-Drummond's Onion,25,16,Souvla,67,Battery,10
-Altea,26,87,Souvla,88,Pod,3
-Douglas' Buckwheat,27,63,Souvla,26,Booster,1
-Thorny Dewberry,28,18,Souvla,55,Battery,1
-Curvenut Combseed,29,35,Souvla,86,Atomizer,10
-Mint,30,26,Souvla,25,Mod,10
-Hart's Ragwort,31,75,Souvla,38,Battery,1
-Turner Wildrye,32,21,Souvla,40,Mod,9
-Gulf Cockspur Grass,33,58,Souvla,31,Pod,5
-Lakeside Sunflower,34,36,Souvla,59,Coil,4
-Rose Myrtle,35,97,Souvla,82,Atomizer,3
-Spreading Hawthorn,36,65,Souvla,61,Mod,9
-Nelson's Milkvetch,37,54,Souvla,91,Pod,2
-Tall Silverbush,38,84,Souvla,93,Battery,6
-San Francisco Nailwort,39,61,Souvla,95,Liquid,2
-Menzies' Spikemoss,40,28,Souvla,91,Booster,10
-Beach Sheoak,41,37,Souvla,59,Battery,7
-Longleaf Buckwheat,42,97,Souvla,48,Mod,10
-Kauai Pipturus,43,88,Souvla,95,Atomizer,4
-Southern Colicroot,44,67,Souvla,65,Coil,8
-Redskin Onion,45,35,,88,Atomizer,6
-Cascara Serpentine Buckthorn,46,90,Souvla,50,Liquid,10
-Mammoth Wildrye,47,13,Souvla,99,Mod,8
-Lapland Amphidium Moss,48,94,Souvla,34,Booster,2
-Lindley's Butterflybush,49,65,Souvla,22,Liquid,1
-Cape Sable Whiteweed,50,66,Souvla,31,Liquid,1
+Product_Name,PID,Price,Description,Quantity,Category
+Rhea Dual New Color,1,60,,5,Mod
+Box Riva 200,2,59,,5,Mod
+Aegis Legend 2,3,55,,5,Mod
+Aegis Touch (T200),4,75,,5,Mod
+Box Z200,5,50,,5,Mod
+Box Hell200,6,65,,5,Mod
+Box Centaurus M200,7,70,,5,Mod
+Mod Thelema Quest 200W,8,57,,5,Mod
+G Class V2 200W,9,175,,5,Mod
+Box Odin V2,10,99,,5,Mod
+Box Gen 200 220W,11,47,,5,Mod
+DRAG 4 Box Mod,12,55,,5,Mod
+Marvos X Pro,13,45,,5,Mod
+Aegis Mini 2 M100,14,55,,5,Mod
+Mod Target 100,15,50,,5,Mod
+Nautilus XS 0.7,16,4,,5,Coil
+PockeX Coil 0.6,17,3.9,,5,Coil
+Z 0.15 ohm XM,18,4,,5,Coil
+M COIL Z2 0.2ohm,19,4,,5,Coil
+Chilled Strawberries,20,9,,5,Liquid
+Ice Grapes & Green Apple,21,9,,5,Liquid
+Grapes & Aloe Vera,22,9,,5,Liquid
+Butter Caramels,23,9,,5,Liquid
+American Blend Tobacco,24,9,,5,Liquid
+VTC5A 18650,25,12.5,,5,Battery
+VTC6 18650,26,12,,5,Battery
+VTC6A 21700,27,13,,5,Battery
+Nicotine,28,3.5,,5,Booster
+Zeus Sub Ohm Tank,29,30,,5,Atomizer
+Dead Rabbit Max,30,35,,5,Atomizer
+Dead Rabbit V3 RDA 24mm,31,35,,5,Atomizer
+Z Max Sub Ohm Tank,32,30,,5,Atomizer
+Pockex AIO,33,29,,5,Pod
+KIWI - STARTER KIT ,34,75.9,,5,Pod
+Kit Pod Wenax Q 1000mAh,35,25,,5,Pod
+Klypse Pod Kit,36,15,,5,Pod
