@@ -11,7 +11,7 @@ USE DB CREATE TABLE [dbo].CUSTOMER (
   UserName VARCHAR(30) NOT NULL,
   Passwd VARCHAR(20) NOT NULL,
   Birth_Date DATE NOT NULL,
-  Loyalty_Points INT NOT NULL,
+  Loyalty_Points INT NOT NULL DEFAULT 0,
   CHECK(Loyalty_Points >= 0),
   CONSTRAINT [PK_CUSTOMER] PRIMARY KEY ([UserName] ASC)
 );

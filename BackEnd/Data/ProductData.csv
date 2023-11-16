@@ -1,8 +1,8 @@
 Product_Name,Product_ID,Price,Description,Stock,Category,Popularity,Image_path
-BABOR HSR Glamour Lifting,1,98,,21,Mod,9,
-CIPROFLOXACIN HYDROCHLORIDE,2,592,Tayassu pecari,16,Mod,6,
+BABOR HSR Glamour Lifting,1,98,,21,Mod,9,images\image1.png
+CIPROFLOXACIN HYDROCHLORIDE,2,592,Tayassu pecari,16,Mod,6,images\image1.png
 Vytorin,3,740,,72,Liquid,7,
-Germ Safe,4,176,Estrilda erythronotos,70,Mod,9,
+Germ Safe,4,176,Estrilda erythronotos,70,Mod,9,images\image2.png
 Good Neighbor Pharmacy Sleep Time,5,937,Globicephala melas,36,Mod,1,
 Chicken,6,669,Melanerpes erythrocephalus,45,Mod,2,
 OXYGEN,7,200,,1,Booster,9,
