@@ -24,7 +24,7 @@ CREATE TABLE [dbo].PRODUCT (
   CHECK(Price >= 0),
   Description VARCHAR(50) NOT NULL DEFAULT 'No item description',
   Stock INT NOT NULL,
-  CHECK(Quantity >= 0),
+  CHECK(Stock >= 0),
   Category VARCHAR(30) NOT NULL,
   CHECK (
     Category IN (
@@ -42,13 +42,13 @@ CREATE TABLE [dbo].PRODUCT (
     Popularity BETWEEN 1
     and 10
   ),
-  Image_path VARCHAR(200) NOT NULL,
-  CONSTRAINT [PK_PRODUCT] PRIMARY KEY ([PID] ASC)
+  Image_path VARCHAR(200),
+  CONSTRAINT [PK_PRODUCT] PRIMARY KEY ([Product_ID] ASC)
 );
 
 --create orders table
 CREATE TABLE [dbo].ORDERS (
-  OrderID INT NOT NULL,
+  Order_ID INT NOT NULL,
   Status VARCHAR(15) NOT NULL,
   CHECK (
     Status IN (
@@ -56,13 +56,13 @@ CREATE TABLE [dbo].ORDERS (
       'Ready for pickup',
       'Completed',
       'Cancelled',
-      'In progress',
+      'In progress'
     )
   ),
   Date DATE NOT NULL,
   --FK
   UserName VARCHAR(30) NOT NULL,
-  CONSTRAINT [PK_ORDERS] PRIMARY KEY ([OrderID] ASC)
+  CONSTRAINT [PK_ORDERS] PRIMARY KEY ([Order_ID] ASC)
 );
 
 --create cart table
