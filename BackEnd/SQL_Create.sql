@@ -18,7 +18,7 @@ USE DB CREATE TABLE [dbo].CUSTOMER (
 
 --create product table
 CREATE TABLE [dbo].PRODUCT (
-  Product_Name VARCHAR(30) NOT NULL,
+  Product_Name VARCHAR(50) NOT NULL,
   Product_ID INT NOT NULL,
   Price INT NOT NULL,
   CHECK(Price >= 0),
@@ -137,7 +137,7 @@ BULK
 INSERT
   [dbo].PRODUCT
 FROM
-  'G:\My Drive\UCY\UNIVERSITY(5TH semester)\EPL343\Big fucking project\epl343.winter23.team9\BackEnd\Product.csv' WITH (
+  'C:\Users\asus\Documents\GitHub\epl343.winter23.team9\BackEnd\Data\ProductData.csv' WITH (
     FIELDTERMINATOR = ',',
     -- Change to '\t' if your fields are tab-separated
     ROWTERMINATOR = '\n',
@@ -150,7 +150,7 @@ BULK
 INSERT
   [dbo].Customer
 FROM
-  'G:\My Drive\UCY\UNIVERSITY(5TH semester)\EPL343\Big fucking project\epl343.winter23.team9\BackEnd\Customer.csv' WITH (
+  'C:\Users\asus\Documents\GitHub\epl343.winter23.team9\BackEnd\Data\Customer.csv' WITH (
     FIELDTERMINATOR = ',',
     -- Change to '\t' if your fields are tab-separated
     ROWTERMINATOR = '\n',
