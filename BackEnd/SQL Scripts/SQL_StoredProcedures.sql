@@ -35,3 +35,19 @@ GO CREATE PROC spLOGIN @UserName VARCHAR(30),
 END
 ELSE BEGIN PRINT 'Error: Invalid username or password'
 END
+
+  CREATE PROCEDURE spProduct (@ProductArg CHAR(50)=NULL) 
+AS BEGIN 
+	SELECT	[Product_Name], Price
+	FROM	[dbo].[PRODUCT]
+	WHERE	Category = @ProductArg
+END
+GO
+
+  CREATE PROCEDURE spProducts
+AS BEGIN 
+	SELECT	[Product_Name], Price
+	FROM	[dbo].[PRODUCT]
+	WHERE	Category = 'Mod' OR Category='Atomizer' OR Category='Battery' OR Category = 'Coil'
+END
+GO
