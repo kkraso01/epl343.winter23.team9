@@ -12,6 +12,7 @@ AS IF EXISTS (
 ) BEGIN PRINT 'Error: Username already exists'
 END
 ELSE BEGIN
+SET @Password=HASHBYTES('SHA2_256', @Passwd);
 INSERT INTO [dbo].CUSTOMER
 VALUES (
         @Email,
@@ -19,17 +20,17 @@ VALUES (
         @First_Name,
         @Last_Name,
         @UserName,
-        @Passwd,
+        @Password,
         @Birth_Date,
         CONVERT(INT, '0')
     );
 END
 GO CREATE PROC spLOGIN @UserName VARCHAR(30),
-    @Password VARCHAR(20) AS IF EXISTS (
+    @Passwd VARCHAR(20) AS IF EXISTS (
         SELECT *
         FROM [dbo].CUSTOMER
         WHERE [UserName] = @UserName
-            AND [Passwd] = @Password
+            AND [Passwd] = HASHBYTES('SHA2_256', @Passwd)
     ) BEGIN PRINT 'Login successful'
 END
 ELSE BEGIN PRINT 'Error: Invalid username or password'
