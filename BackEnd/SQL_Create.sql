@@ -20,7 +20,7 @@ USE DB CREATE TABLE [dbo].CUSTOMER (
 CREATE TABLE [dbo].PRODUCT (
   Product_Name VARCHAR(50) NOT NULL,
   Product_ID INT NOT NULL,
-  Price INT NOT NULL,
+  Price FLOAT NOT NULL,
   CHECK(Price >= 0),
   Description VARCHAR(500) NOT NULL DEFAULT 'No item description',
   Stock INT NOT NULL,
@@ -132,7 +132,7 @@ BULK
 INSERT
   [dbo].PRODUCT
 FROM
-  'C:\Users\asus\Documents\GitHub\epl343.winter23.team9\BackEnd\Data\ProductData.csv' WITH (
+  'C:\Users\asus\Documents\GitHub\epl343.winter23.team9\BackEnd\Data\Products with Images.csv' WITH (
     FIELDTERMINATOR = ',',
     -- Change to '\t' if your fields are tab-separated
     ROWTERMINATOR = '\n',
