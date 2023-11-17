@@ -37,11 +37,6 @@ CREATE TABLE [dbo].PRODUCT (
       'Pod'
     )
   ),
-  Popularity INT NOT NULL,
-  CHECK(
-    Popularity BETWEEN 1
-    and 10
-  ),
   Image_path VARCHAR(200),
   CONSTRAINT [PK_PRODUCT] PRIMARY KEY ([Product_ID] ASC)
 );
