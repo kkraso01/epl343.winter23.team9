@@ -377,4 +377,18 @@
   padding-top: 5px;
   text-align: right;
 }
-
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.prImage{
+  width: 100%;
+  text-align: center;
+  margin: 20px 0px;
+  padding: 0px 20px;
+  height: 200px;
+}
