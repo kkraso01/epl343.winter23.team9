@@ -1,3 +1,101 @@
+<?php 
+  // You can now use $product in your code
+  session_start();
+  $Cat = isset($_POST['Category']) ? $_POST['Category'] : '';
+  function products($sortPrice, $sortName, $Cat)
+  {
+    
+    
+    //print_r($Cat);
+      // Set session variables
+      $serverName = $_SESSION["serverName"];
+		$connectionOptions = $_SESSION["connectionOptions"];
+      $conn = sqlsrv_connect($serverName, $connectionOptions);
+
+      if($conn === false) {
+        die(print_r(sqlsrv_errors(), true));
+    }
+
+    if($Cat == 'Accessories'){
+      $tsql = "{call spProducts}";
+      $getResults = sqlsrv_query($conn, $tsql);
+    }else{
+      $tsql = "{call spProduct (?)}";
+      $params = array($Cat); // replace 'Electronics' with the category you want
+
+      $getResults = sqlsrv_query($conn, $tsql, $params);
+    }
+
+      
+    //$tsql = "SELECT  TOP 30 C.* FROM [dbo].[PRODUCT] AS C";
+    //$getResults = sqlsrv_query($conn, $tsql);
+      while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
+          $data[] = $row;
+      }
+
+      if($sortPrice == 1){
+      usort($data, function($a, $b) {
+        if ($a['Price'] == $b['Price']) {
+          return 0;
+        }
+        return ($a['Price'] < $b['Price']) ? -1 : 1;
+      });
+    }else if($sortPrice == -1){
+      usort($data, function($a, $b) {
+        if ($a['Price'] == $b['Price']) {
+          return 0;
+        }
+        return ($a['Price'] > $b['Price']) ? -1 : 1;
+      });
+    }
+
+    if($sortName == 1){
+      usort($data, function($a, $b) {
+        return strcmp($a['Product_Name'], $b['Product_Name']);
+      });
+    }else if($sortName == -1){
+      usort($data, function($a, $b) {
+        return strcmp($b['Product_Name'], $a['Product_Name']);
+      });
+    }
+
+      foreach ($data as $product) {
+        // Iterate over each column in the row
+       
+        // Print the column name and value
+
+        $name = $product['Product_Name'];
+        $arg = str_replace("&", " AND ", $name);
+        $price = $product['Price'];
+
+        echo "<div class='col-lg-3 col-sm-6'>
+        <div class='product_box'>
+           <img src='' class='prImage'>
+           <h4 class='bursh_text'>$name</h4>
+           <div class='btn_main'>
+              <div class='buy_bt'>
+                 <form id='detailForm_$arg' method='post' action='product-detail.php' style='display: none;'>
+                   <input type='hidden' name='Name' value='$arg'>
+                   <input type='hidden' name='Category' value='$Cat'>
+                 </form>
+                 <a href='#' onclick='document.getElementById(\"detailForm_$arg\").submit();'>View</a>
+              </div>
+              <h3 class='price_text'>Price €$price</h3>
+           </div>
+        </div>
+     </div>";
+
+    }
+
+      /* Free query  resources. */
+      sqlsrv_free_stmt($getResults);
+
+      /* Free connection resources. */
+      sqlsrv_close($conn);
+  
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -99,44 +197,28 @@
             
           </header>
         </div>
+        <form method="post" id="sortForm">
+  <input type="hidden" name="Category" value="<?php echo $Cat?>">
+  <input type="radio" id="option1" name="optionP" value="1" onchange="document.getElementById('sortForm').submit()">
+  <label for="option1">Sort by Price ASC</label><br>
+  <input type="radio" id="option2" name="optionP" value="-1" onchange="document.getElementById('sortForm').submit()">
+  <label for="option2">Sort by Price DESC</label><br>
+  <input type="radio" id="option3" name="optionN" value="1" onchange="document.getElementById('sortForm').submit()">
+  <label for="option3">Sort by Name ASC</label><br>
+  <input type="radio" id="option4" name="optionN" value="-1" onchange="document.getElementById('sortForm').submit()">
+  <label for="option4">Sort by Name DESC</label><br>
+</form>
         <div class="product-list-container2">
-          <div class='col-lg-3 col-sm-6'>
-            <div class='product_box'>
-               <img src='' alt="product">
-               <h4 class='bursh_text'>Product1</h4>
-               <div class='btn_main'>
-                  <div class='info_bt'>
-                     <a href='#' >View</a>
-                  </div>
-                  <h3 class='price_text'>Price €price</h3>
-               </div>
-            </div>
-         </div> 
-         <div class='col-lg-3 col-sm-6'>
-          <div class='product_box'>
-             <img src='' alt="product">
-             <h4 class='bursh_text'>Product2</h4>
-             <div class='btn_main'>
-                <div class='info_bt'>
-                   <a href='#' >View</a>
-                </div>
-                <h3 class='price_text'>Price €price</h3>
-             </div>
-          </div>
-       </div> 
-       <div class='col-lg-3 col-sm-6'>
-        <div class='product_box'>
-           <img src='' alt="product">
-           <h4 class='bursh_text'>Product3</h4>
-           <div class='btn_main'>
-              <div class='info_bt'>
-                 <a href='#' >View</a>
-              </div>
-              <h3 class='price_text'>Price €price</h3>
-           </div>
+          <div class="row">
+
+          <?php 
+      $optionP = isset($_POST['optionP']) ? $_POST['optionP'] : 0;
+      $optionN = isset($_POST['optionN']) ? $_POST['optionN'] : 0;
+      products($optionP,$optionN, $Cat); 
+      
+    ?> 
         </div>
-     </div> 
-        </div>
+      </div>
       </div>
     </div>
     
