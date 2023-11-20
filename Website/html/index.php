@@ -44,32 +44,18 @@ session_start();
       border-style: solid;
     }
 
-    p,
-    li,
-    ul,
-    pre,
-    div,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    figure,
-    blockquote,
+    p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,
+
     figcaption {
       margin: 0;
       padding: 0;
     }
-
     button {
       background-color: transparent;
     }
 
-    button,
-    input,
-    optgroup,
-    select,
+    button,input,optgroup,select,
+
     textarea {
       font-family: inherit;
       font-size: 100%;
@@ -157,7 +143,6 @@ session_start();
         opacity: 0;
         transform: translateX(-20px);
       }
-
       100% {
         opacity: 1;
         transform: translateX(0);
@@ -165,7 +150,6 @@ session_start();
     }
   </style>
 </head>
-
 <body>
   <link rel="stylesheet" href="./style.css" />
   <div>
