@@ -1,3 +1,74 @@
+<?php
+ session_start();
+function viewDetails(){
+ 
+  if (isset($_POST['Name'])) {
+    $Name = $_POST['Name'];
+    $Name = str_replace(" AND ", '&', $Name);
+  }
+
+  if (isset($_POST['Category'])) {
+    $Cat = $_POST['Category'];
+  }
+
+$Nicotine = "";
+  if($Cat == 'Liquid'){
+    $Nicotine = "
+    <span class='product-detail-nicotine'>-Select Nicotine Amount-</span>
+    <select name='Nicotine' class='product-detail-nicotine1'>
+    <option selected=''>0</option>
+    <option value='Option 2'>3 +€3.5</option>
+    <option value='Option 3'>6 +€7</option>
+    <option value='Option 4'>9 +€10.5</option>
+  </select>";
+  }
+
+    $serverName = $_SESSION["serverName"];
+		$connectionOptions = $_SESSION["connectionOptions"];
+      $conn = sqlsrv_connect($serverName, $connectionOptions);
+
+      if($conn === false) {
+        die(print_r(sqlsrv_errors(), true));
+    }
+
+    $tsql = "{call viewProduct (?)}";
+    $params = array($Name); // replace 'Electronics' with the category you want
+
+    $getResults = sqlsrv_query($conn, $tsql, $params);
+
+    while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
+      $data[] = $row;
+  }
+
+    $Price = $data[0]['Price'];
+    $Description = $data[0]['Description'];
+
+    echo "
+    <img
+      alt='product'
+      src=''
+      class='product-detail-image1'
+    />
+    
+    <span class='product-detail-title'>$Name €$Price</span>
+    <span class='product-detail-description'>
+            <span>$Description</span>
+          </span>
+    $Nicotine
+    <span class='product-detail-quantity'>Quantity:</span>
+    <select class='product-detail-quantity1'>
+    <option value='Option 1'>1</option>
+    <option value='Option 2'>2</option>
+    <option value='Option 3'>3</option>
+    </select>
+    <button type='button' class='product-detail-button button'>
+    Add to Cart
+    </button>";
+
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -99,33 +170,11 @@
             </div>
           </header>
         </div>
-        <div class="product-detail-container2">
-          <img
-            alt="product"
-            src=""
-            class="product-detail-image1"
-          />
-          <span class="product-detail-nicotine">-Select Nicotine Amount-</span>
-          <span class="product-detail-title">Product Title (€Price)</span>
-          <span class="product-detail-quantity">Quantity:</span>
-          <span class="product-detail-description">
-            <span>*Description*</span>
-          </span>
-          <select name="Nicotine" class="product-detail-nicotine1">
-            <option selected="">0</option>
-            <option value="Option 2">5</option>
-            <option value="Option 3">10</option>
-            <option value="Option 4">20</option>
-          </select>
-          <button type="button" class="product-detail-button button">
-            Add to Cart
-          </button>
-          <select class="product-detail-quantity1">
-            <option value="Option 1">1</option>
-            <option value="Option 2">2</option>
-            <option value="Option 3">3</option>
-          </select>
-        </div>
+        <div class='product-detail-container2'>
+       <?php viewDetails(); ?>
+    </div>
+        
+       
       </div>
     </div>
     

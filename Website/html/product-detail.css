@@ -190,7 +190,7 @@
 .product-detail-nicotine {
   top: 388px;
   left: 620px;
-  position: relative;
+  position: absolute;
   font-size: 22px;
   font-family: "Nunito";
   font-weight: 700;
@@ -209,7 +209,7 @@
 }
 .product-detail-quantity {
   bottom: -28.3em;
-  right: -38em;
+  right: -52em;
   position: relative;
   font-size: 18px;
   font-family: "Nunito";
@@ -237,7 +237,7 @@
   border-width: 1px;
 }
 .product-detail-button {
-  left: 9em;
+  left: 16em;
   color: #ffffff;
   width: 288px;
   bottom: -16.2em;
@@ -252,7 +252,7 @@
 }
 .product-detail-quantity1 {
   bottom: -31em;
-  right: -26em;
+  right: -60em;
   width: 52px;
   height: var(--dl-size-size-small);
   position: relative;
