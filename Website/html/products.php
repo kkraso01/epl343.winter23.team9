@@ -100,20 +100,20 @@
         <div class="products-container2">
         <img alt="image" src="./Images/nevoks-feelin-_a1-_kit-_main_.png"
           class="products-image1" />
-        <form action="" method="post">
+        <form action="product-list.php" method="post">
           <input type="hidden" name="Category" value="Pod">
           <button type="submit" class="products-e-cigarettes button">E-Cigarettes</button>
         </form>
         <img alt="image" src="./Images/home_featured1-1024x761.png"
           class="products-image2" />
-        <form action="" method="post">
+        <form action="product-list.php" method="post">
           <input type="hidden" name="Category" value="Liquid">
           <button type="submit" class="products-e-cigarettes1 button">Vape Liquid</button>
         </form>
         <img alt="image"
           src="./Images/25112021_VV_Category_Banner_Images_Tanks_1.png"
           class="products-image3" />
-        <form action="" method="post">
+        <form action="product-list.php" method="post">
           <input type="hidden" name="Category" value="Accessories">
           <button type="submit" class="products-e-cigarettes2 button">Accessories</button>
         </form>
