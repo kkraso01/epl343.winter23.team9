@@ -1,3 +1,48 @@
+<?php
+session_start();
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Collect input data
+    $username = $_POST['username'];
+    $usernameAdmin = $_POST['usernameAdmin'];
+    $passwordAdmin = $_POST['passwordAdmin'];
+    $password = $_POST['password'];
+
+    // Database connection
+   // Set session variables
+   $serverName = $_SESSION["serverName"];
+   $connectionOptions = $_SESSION["connectionOptions"];
+     $conn = sqlsrv_connect($serverName, $connectionOptions);
+
+     if($conn === false) {
+       die(print_r(sqlsrv_errors(), true));
+   }
+
+    // Prepare SQL statement
+    $tsql = "{call spLOGIN (?, ?)}";
+
+    if(!empty($username) && !empty($password) ){
+      $params = array($username, $password );  
+    } else if(!empty($usernameAdmin) && !empty($passwordAdmin) ){
+      $params = array($usernameAdmin, $passwordAdmin); 
+    } else{
+      echo "Please enter a username and password.";
+    }
+
+    // Execute the query
+    $stmt = sqlsrv_query($conn, $tsql, $params);
+    if ($stmt === false) {
+      echo "Error Registering.";
+      print_r(sqlsrv_errors(), true);
+    } else {
+        echo "Registration successful.";
+        /* Free query  resources. */
+    sqlsrv_free_stmt($stmt);
+    }
+    // Close the connection
+    sqlsrv_close($conn);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -137,26 +182,29 @@
         <img alt="image" src="./images/MyEcigShopLogoNew.png" class="login-page-ecig-picture" />
       </a>
       <header class="login-page-backround">
+      <form action="login-page.php" method="post"> 
         <input type="text" placeholder="username" class="login-page-username-member input" />
-        <input type="text" placeholder="username" class="login-page-username-admin input" />
-        <input type="text" placeholder="password" class="login-page-password-admin input" />
+        <input type="text" placeholder="usernameAdmin" class="login-page-username-admin input" />
+        <input type="text" placeholder="passwordAdmin" class="login-page-password-admin input" />
         <input type="text" placeholder="password" class="login-page-password-member input" />
+        
+        <button type="submit" class="login-page-member-login button">
+        <span class="login-page-text02">
+            <span class="login-page-text03">Login</span>
+        </span>
+    </button>
+
+    <button type="submit" class="login-page-admin-login button">
+        <span class="login-page-text05">
+            <span class="login-page-text06">Login</span>
+        </span>
+    </button>
+
+        </form>
         <span class="login-page-welcome-text">
           <span class="login-page-text">Welcome to Your Account</span>
           <br class="login-page-text01" />
         </span>
-        <a href="login-page.php" class="login-page-member-login button">
-          <span class="login-page-text02">
-            <span class="login-page-text03">Login</span>
-            <br />
-          </span>
-        </a>
-        <a href="login-page.php" class="login-page-admin-login button">
-          <span class="login-page-text05">
-            <span class="login-page-text06">Login</span>
-            <br />
-          </span>
-        </a>
         <span class="login-page-login-header">member login</span>
         <span class="login-page-admin-header">
           <span class="login-page-text08">Admin Login</span>

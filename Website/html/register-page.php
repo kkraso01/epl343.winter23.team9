@@ -202,10 +202,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </button>
 
         </form>
-        <span class="register-page-login-header">
-          <span>Register</span>
-          <br />
-        </span>
+
         <a href="login-page.php" class="register-page-sign-up-button">
           I am already a member
         </a>
