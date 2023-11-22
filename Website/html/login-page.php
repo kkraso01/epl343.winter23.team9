@@ -21,6 +21,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tsql = "{call spLOGIN (?, ?)}";
 
     if(!empty($username) && !empty($password) ){
+      print_r($username);
+      print_r($password);
       $params = array($username, $password );  
     } else if(!empty($usernameAdmin) && !empty($passwordAdmin) ){
       $params = array($usernameAdmin, $passwordAdmin); 
@@ -31,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Execute the query
     $stmt = sqlsrv_query($conn, $tsql, $params);
     if ($stmt === false) {
-      echo "Error Registering.";
+      echo "Error Logging in.";
       print_r(sqlsrv_errors(), true);
     } else {
         echo "Registration successful.";
@@ -183,10 +185,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </a>
       <header class="login-page-backround">
       <form action="login-page.php" method="post"> 
-        <input type="text" placeholder="username" class="login-page-username-member input" />
-        <input type="text" placeholder="usernameAdmin" class="login-page-username-admin input" />
-        <input type="text" placeholder="passwordAdmin" class="login-page-password-admin input" />
-        <input type="text" placeholder="password" class="login-page-password-member input" />
+        <input type="text" name="username" placeholder="username" class="login-page-username-member input" />
+        <input type="text" name="usernameAdmin" placeholder="username" class="login-page-username-admin input" />
+        <input type="text" name="passwordAdmin" placeholder="password" class="login-page-password-admin input" />
+        <input type="text" name="password" placeholder="password" class="login-page-password-member input" />
         
         <button type="submit" class="login-page-member-login button">
         <span class="login-page-text02">

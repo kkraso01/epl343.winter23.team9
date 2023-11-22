@@ -3,7 +3,7 @@ CREATE PROCEDURE spSIGNUP @Email VARCHAR(30),
 @First_Name VARCHAR(30),
 @Last_Name VARCHAR(30),
 @UserName VARCHAR(30),
-@Passwd VARCHAR(20),
+@Passwd VARCHAR(256),
 @Birth_Date DATE
 AS 
 BEGIN
@@ -34,14 +34,12 @@ CREATE PROCEDURE spLOGIN @UserName VARCHAR(30),
   @Passwd VARCHAR(20) 
   AS 
   BEGIN
-  IF EXISTS (
+  IF NOT EXISTS (
     SELECT *
     FROM [dbo].CUSTOMER
     WHERE [UserName] = @UserName
       AND [Passwd] = HASHBYTES('SHA2_256', @Passwd)
-  ) BEGIN PRINT 'Login successful'
-END
-ELSE BEGIN PRINT 'Error: Invalid username or password'
+  )  BEGIN PRINT 'Error: Invalid username or password' PRINT HASHBYTES('SHA2_256', @Passwd)
 END
 END
 GO 
