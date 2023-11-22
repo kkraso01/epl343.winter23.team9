@@ -19,12 +19,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Prepare SQL statement
     $tsql = "{call spLOGIN (?, ?)}";
-
+    $admin=0;
     if(!empty($username) && !empty($password) ){
-      print_r($username);
-      print_r($password);
-      $params = array($username, $password );  
+      $params = array($username, $password);  
     } else if(!empty($usernameAdmin) && !empty($passwordAdmin) ){
+      $admin=1;
       $params = array($usernameAdmin, $passwordAdmin); 
     } else{
       echo "Please enter a username and password.";
@@ -33,10 +32,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Execute the query
     $stmt = sqlsrv_query($conn, $tsql, $params);
     if ($stmt === false) {
-      echo "Error Logging in.";
+      echo "Error logging in.";
       print_r(sqlsrv_errors(), true);
     } else {
-        echo "Registration successful.";
+      if($admin){
+        echo "Admin Login successful.";
+      }else{
+        echo "Login successful.";
+      }
+        
+
         /* Free query  resources. */
     sqlsrv_free_stmt($stmt);
     }
