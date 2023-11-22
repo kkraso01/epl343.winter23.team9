@@ -50,7 +50,8 @@ CREATE PROCEDURE spProduct (@ProductArg CHAR(50) = NULL)
 AS 
 BEGIN
 SELECT [Product_Name],
-  Price
+  [Price],
+  [Image_path]
 FROM [dbo].[PRODUCT]
 WHERE Category = @ProductArg
 END
@@ -60,7 +61,8 @@ CREATE PROCEDURE spProducts
 AS 
 BEGIN
 SELECT [Product_Name],
-  Price
+  [Price],
+  [Image_path]
 FROM [dbo].[PRODUCT]
 WHERE Category = 'Mod'
   OR Category = 'Atomizer'
@@ -134,7 +136,7 @@ CREATE PROCEDURE spEditProduct
   IF NOT EXISTS (
     SELECT *
     FROM [dbo].[PRODUCT]
-    WHERE [Product_ID] = @Product_ID
+    WHERE [Product_ID] = @p_ID
   ) BEGIN PRINT 'Error: Product does not exist' RETURN
 END
   EXEC spDeleteProduct @Product_ID=@p_ID;

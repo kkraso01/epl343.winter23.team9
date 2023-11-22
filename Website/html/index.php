@@ -7,8 +7,8 @@ session_start();
   <head>
   <?php
   $sqlDBname = "DB";
-  $serverName = $_SESSION["serverName"] = "PC-KILLER";
-  //$_SESSION["serverName"] = "DESKTOP-H9FM89T\MSSQLSERVER01";
+  $serverName = $_SESSION["serverName"] = "DESKTOP-HQM94Q5";
+  $_SESSION["serverName"] = "DESKTOP-HQM94Q5\MSSQLSERVER01";
   $_SESSION["connectionOptions"] = array(
           "Database" => $sqlDBname
       );

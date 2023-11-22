@@ -386,9 +386,10 @@
   margin-left: -15px;
 }
 .prImage{
-  width: 100%;
+  width: 300px;
   text-align: center;
   margin: 20px 0px;
   padding: 0px 20px;
-  height: 200px;
+  height: 300px;
+  object-fit:contain;
 }
