@@ -25,16 +25,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $params = array($email, $phone, $firstname, $lastname, $username, $password, $birthdate);
 
     // Execute the query
-    $stmt = sqlsrv_query($conn, $tsql, $params);
+      $stmt = sqlsrv_query($conn, $tsql, $params);
     if ($stmt === false) {
       echo "Error Registering.";
-        die(print_r(sqlsrv_errors(), true));
+      print_r(sqlsrv_errors(), true);
     } else {
         echo "Registration successful.";
-    }
-
-    /* Free query  resources. */
+        /* Free query  resources. */
     sqlsrv_free_stmt($stmt);
+    }
     // Close the connection
     sqlsrv_close($conn);
 }
