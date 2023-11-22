@@ -1,4 +1,9 @@
 We must add the proper constaints to out database regarding deletion of products and other entries
 
 how to execute any of our stored procedures
-EXEC YourProcedure @Param1 = 'value1', @Param2 = 'value2';
+
+EXEC spAddProduct @Product_Name='Mariosgamer', @Product_ID='100', @Price='80', @Description='wowowow', @Stock='10', @Category='Mod', @Image_path='images/image1.png';
+
+EXEC spDeleteProduct @Product_ID='100';
+
+EXEC spEditProduct  @p_Name='Marios iphone', @p_ID='100', @p_Price='1200', @p_Description='wowowow', @p_Stock='10', @p_Category='Mod', @p_Image_path='images/image1.png';

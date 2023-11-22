@@ -114,3 +114,25 @@ DELETE FROM [dbo].[PRODUCT]
     WHERE [Product_ID] = @Product_ID
 PRINT 'Success: Product deleted'
 END
+
+CREATE PROCEDURE spEditProduct
+  @p_Name VARCHAR(50),
+  @p_ID INT,
+  @p_Price FLOAT,
+  @p_Description VARCHAR(500),
+  @p_Stock INT,
+  @p_Category VARCHAR(30),
+  @p_Image_path VARCHAR(200)
+  AS 
+  BEGIN
+  IF NOT EXISTS (
+    SELECT *
+    FROM [dbo].[PRODUCT]
+    WHERE [Product_ID] = @Product_ID
+  ) BEGIN PRINT 'Error: Product does not exist' RETURN
+END
+  EXEC spDeleteProduct @Product_ID=@p_ID;
+  EXEC spAddProduct @Product_Name=@p_Name, @Product_ID=@p_ID, @Price=@p_Price, @Description=@p_Description, @Stock=@p_Stock, @Category=@p_Category, @Image_path=@p_Image_path;
+
+END
+GO
