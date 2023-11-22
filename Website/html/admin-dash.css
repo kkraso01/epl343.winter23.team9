@@ -56,6 +56,24 @@
   text-decoration: none;
 }
 
+.product-list-nav1 {
+  font-size: 24px;
+  transition: 0.3s;
+  text-decoration: none;
+}
+.product-list-nav1:hover {
+  color: #3d6e70ff;
+}
+.product-list-nav2 {
+  font-size: 24px;
+  transition: 0.3s;
+  margin-left: var(--dl-space-space-twounits);
+  text-decoration: none;
+}
+.product-list-nav2:hover {
+  color: #3d6e70ff;
+}
+
 .admin-edit1-product-list {
   top: 40px;
   left: 225px;
@@ -108,35 +126,37 @@
 
 .admin-edit1-price {
   top: 20px;
-  left: 524px;
+  left: 539px;
   position: absolute;
   font-size: 26px;
 }
 
 .admin-edit1-name-placeholder {
   top: 60px;
-  left: 137px;
+  left: 183px;
   position: absolute;
   font-size: 24px;
 }
 
 .admin-edit1-name-placeholder1 {
   top: 60px;
-  left: 317px;
+  left: 274px;
   position: absolute;
   font-size: 24px;
+  text-align: center;
+  width: 200px;
 }
 
 .admin-edit1-price-placeholder {
   top: 60px;
-  left: 497px;
+  left: 546px;
   position: absolute;
   font-size: 24px;
 }
 
 .admin-edit1-quantity-placeholder {
   top: 60px;
-  left: 688px;
+  left: 66%;
   position: absolute;
   font-size: 24px;
 }
