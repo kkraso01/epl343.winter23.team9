@@ -21,12 +21,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    }
 
     // Prepare SQL statement
-    $tsql = "{call spSIGNUP (?, ?, ?, ?, ?, ?, ?)}"
+    $tsql = "{call spSIGNUP (?, ?, ?, ?, ?, ?, ?)}";
     $params = array($email, $phone, $firstname, $lastname, $username, $password, $birthdate);
 
     // Execute the query
     $stmt = sqlsrv_query($conn, $tsql, $params);
     if ($stmt === false) {
+      echo "Error Registering.";
         die(print_r(sqlsrv_errors(), true));
     } else {
         echo "Registration successful.";
@@ -186,6 +187,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           class="register-page-ecig-picture" />
       </a>
       <header class="register-page-backround">
+      <form action="register-page.php" method="post"> 
         <input type="tel" name="phone" placeholder="phone" class="register-page-username-member input" />
         <input type="text" name="firstname" placeholder="Firstname" class="register-page-username-member1 input" />
         <input type="date" name="birthdate" placeholder="Age" class="register-page-username-admin input" />
@@ -193,12 +195,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="password" name="password" placeholder="password" class="register-page-password-admin input" />
         <input type="email" name="email" placeholder="email" class="register-page-password-member input" />
         <input type="text" name="username" placeholder="username" class="register-page-password-member1 input" />
-        <a href="login-page.php" class="register-page-member-login button">
-          <span class="register-page-text">
+        
+        <button type="submit" class="register-page-member-login button">
+        <span class="register-page-text">
             <span class="register-page-text1">Register</span>
-            <br />
-          </span>
-        </a>
+        </span>
+    </button>
+
+        </form>
         <span class="register-page-login-header">
           <span>Register</span>
           <br />

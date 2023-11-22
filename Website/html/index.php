@@ -222,7 +222,7 @@ session_start();
               <br />
             </span>
           </a>
-          <a href="RegisterPage.php" class="main-page-navlink1 button">
+          <a href="register-page.php" class="main-page-navlink1 button">
             Sign Up
           </a>
         </div>
