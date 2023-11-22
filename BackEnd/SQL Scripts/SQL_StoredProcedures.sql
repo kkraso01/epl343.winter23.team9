@@ -6,6 +6,7 @@ CREATE PROCEDURE spSIGNUP @Email VARCHAR(30),
 @Passwd VARCHAR(20),
 @Birth_Date DATE
 AS 
+BEGIN
 IF EXISTS (
   SELECT *
   FROM [dbo].CUSTOMER
@@ -26,11 +27,13 @@ VALUES (
     CONVERT(INT, '0')
   );
 END
+END
 GO 
 
 CREATE PROCEDURE spLOGIN @UserName VARCHAR(30),
   @Passwd VARCHAR(20) 
   AS 
+  BEGIN
   IF EXISTS (
     SELECT *
     FROM [dbo].CUSTOMER
@@ -39,6 +42,7 @@ CREATE PROCEDURE spLOGIN @UserName VARCHAR(30),
   ) BEGIN PRINT 'Login successful'
 END
 ELSE BEGIN PRINT 'Error: Invalid username or password'
+END
 END
 GO 
 
@@ -73,6 +77,7 @@ CREATE PROCEDURE spAddProduct @Product_Name VARCHAR(50),
   @Category VARCHAR(30),
   @Image_path VARCHAR(200)
   AS 
+  BEGIN
   IF EXISTS (
     SELECT *
     FROM [dbo].[PRODUCT]
@@ -97,7 +102,8 @@ VALUES (
     @Category,
     @Image_path
   );
-  PRINT 'Success: Product added'
+  PRINT 'Success: Product added/updated.'
+END
 END
 GO
 
