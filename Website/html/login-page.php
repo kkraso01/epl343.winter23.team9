@@ -133,7 +133,7 @@
     <link href="./login-page.css" rel="stylesheet" />
 
     <div class="login-page-container">
-      <a href="index.html" class="login-page-navlink">
+      <a href="index.php" class="login-page-navlink">
         <img alt="image" src="./images/MyEcigShopLogoNew.png" class="login-page-ecig-picture" />
       </a>
       <header class="login-page-backround">
@@ -145,13 +145,13 @@
           <span class="login-page-text">Welcome to Your Account</span>
           <br class="login-page-text01" />
         </span>
-        <a href="login-page.html" class="login-page-member-login button">
+        <a href="login-page.php" class="login-page-member-login button">
           <span class="login-page-text02">
             <span class="login-page-text03">Login</span>
             <br />
           </span>
         </a>
-        <a href="login-page.html" class="login-page-admin-login button">
+        <a href="login-page.php" class="login-page-admin-login button">
           <span class="login-page-text05">
             <span class="login-page-text06">Login</span>
             <br />
@@ -172,13 +172,13 @@
           <div class="login-page-container1">
             <span class="login-page-logo">ECS</span>
             <nav class="login-page-nav">
-              <a href="index.html" class="login-page-nav1">Home</a>
-              <a href="products.html" class="login-page-nav2">Products</a>
+              <a href="index.php" class="login-page-nav1">Home</a>
+              <a href="products.php" class="login-page-nav2">Products</a>
               <a class="login-page-nav3">
                 <span>Cart</span>
                 <br />
               </a>
-              <a href="ContactUs.html" class="login-page-nav5">Contact</a>
+              <a href="ContactUs.php" class="login-page-nav5">Contact</a>
             </nav>
           </div>
           <div class="login-page-separator"></div>

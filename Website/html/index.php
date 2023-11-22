@@ -158,14 +158,14 @@ session_start();
     <div class="main-page-container">
       <div class="main-page-header">
         <header data-thq="thq-navbar" class="main-page-navbar-interactive">
-          <a href="index.html" />
+          <a href="index.php" />
           <img alt="image" src="./images/MyEcigShopLogoNew.png" class="main-page-image" />
           </a>
           <nav class="main-page-links">
-            <a href="index.html" class="main-page-nav1">Home</a>
-            <a href="products.html" class="main-page-nav2">Products</a>
+            <a href="index.php" class="main-page-nav1">Home</a>
+            <a href="products.php" class="main-page-nav2">Products</a>
             <span class="main-page-nav3">Order</span>
-            <a href="account.html" class="main-page-nav4">
+            <a href="account.php" class="main-page-nav4">
               <span class="main-page-text">Cart</span>
               <br />
             </a>
@@ -199,7 +199,7 @@ session_start();
               <br />
             </span>
           </a>
-          <a href="RegisterPage.html" class="main-page-navlink1 button">
+          <a href="RegisterPage.php" class="main-page-navlink1 button">
             Sign Up
           </a>
         </div>
@@ -230,7 +230,7 @@ session_start();
           Browse through our extensive collection of electronic cigarettes and
           accessories
         </span>
-        <a href="products.html" class="main-page-banner-button button">
+        <a href="products.php" class="main-page-banner-button button">
           Start Shopping
         </a>
       </div>
@@ -242,14 +242,14 @@ session_start();
           <div class="main-page-container3">
             <span class="main-page-logo1">ECS</span>
             <nav class="main-page-nav1">
-              <a href="index.html" class="main-page-nav12">Home</a>
-              <a href="products.html" class="main-page-nav22">Products</a>
-              <a href="cart-page.html" class="main-page-nav32">
+              <a href="index.php" class="main-page-nav12">Home</a>
+              <a href="products.php" class="main-page-nav22">Products</a>
+              <a href="cart-page.php" class="main-page-nav32">
                 <span>Cart</span>
                 <br />
               </a>
               <span class="main-page-nav42">Account</span>
-              <a href="contact-us.html" class="main-page-nav52">Contact</a>
+              <a href="contact-us.php" class="main-page-nav52">Contact</a>
             </nav>
           </div>
           <div class="main-page-separator"></div>

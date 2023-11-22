@@ -179,8 +179,8 @@
               class="product-list-image"
             />
             <nav class="product-list-links">
-              <a href="index.html" class="product-list-nav1">Home</a>
-              <a href="products.html" class="product-list-nav2">Products</a>
+              <a href="index.php" class="product-list-nav1">Home</a>
+              <a href="products.php" class="product-list-nav2">Products</a>
               <span class="product-list-nav3">Order</span>
               <div class="product-list-nav4">
                 <span class="products-text">Cart</span>

@@ -11,15 +11,30 @@
     html {
       line-height: 1.15;
     }
+
     body {
       margin: 0;
     }
+
     * {
       box-sizing: border-box;
       border-width: 0;
       border-style: solid;
     }
-    p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,
+
+    p,
+    li,
+    ul,
+    pre,
+    div,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    figure,
+    blockquote,
 
     figcaption {
       margin: 0;
@@ -29,7 +44,11 @@
     button {
       background-color: transparent;
     }
-    button,input,optgroup,select,
+
+    button,
+    input,
+    optgroup,
+    select,
 
     textarea {
       font-family: inherit;
@@ -37,6 +56,7 @@
       line-height: 1.15;
       margin: 0;
     }
+
     button,
 
     select {
@@ -113,13 +133,14 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
     data-tag="font" />
 </head>
+
 <body>
   <link rel="stylesheet" href="./style.css" />
   <div>
     <link href="./register-page.css" rel="stylesheet" />
 
     <div class="register-page-container">
-      <a href="index.html" class="register-page-navlink">
+      <a href="index.php" class="register-page-navlink">
         <img alt="image" src="https://my-ecigshop.com/wp-content/uploads/2021/03/MyEcigShopLogoNew.png"
           class="register-page-ecig-picture" />
       </a>
@@ -131,7 +152,7 @@
         <input type="password" name="password" placeholder="password" class="register-page-password-admin input" />
         <input type="email" name="email" placeholder="email" class="register-page-password-member input" />
         <input type="text" name="username" placeholder="username" class="register-page-password-member1 input" />
-        <a href="login-page.html" class="register-page-member-login button">
+        <a href="login-page.php" class="register-page-member-login button">
           <span class="register-page-text">
             <span class="register-page-text1">Register</span>
             <br />
@@ -141,19 +162,17 @@
           <span>Register</span>
           <br />
         </span>
-        <a href="login-page.html" class="register-page-sign-up-button">
+        <a href="login-page.php" class="register-page-sign-up-button">
           I am already a member
         </a>
-        <img alt="image"
-          src="./images/vape-img2.png"
-          class="register-page-image" />
+        <img alt="image" src="./images/vape-img2.png" class="register-page-image" />
         <span class="register-page-text5">Age</span>
       </header>
       <div class="register-page-footer">
         <footer class="register-page-footer1">
           <div class="register-page-container1">
             <span class="register-page-logo">ECS</span>
-            <a href="index.html" class="register-page-navlink1">
+            <a href="index.php" class="register-page-navlink1">
               <nav class="register-page-nav">
                 <span class="register-page-nav1">Home</span>
                 <span class="register-page-nav2">Products</span>
@@ -200,4 +219,5 @@
     </div>
   </div>
 </body>
+
 </html>

@@ -145,7 +145,7 @@ $Nicotine = "";
             data-thq="thq-navbar"
             class="product-detail-navbar-interactive"
           >
-          <a href="index.html">
+          <a href="index.php">
             <img
               alt="image"
               src="./Images/MyEcigShopLogoNew.png"
@@ -153,8 +153,8 @@ $Nicotine = "";
             />
           </a>
             <nav class="product-detail-links">
-              <a href="index.html" class="product-detail-nav1">Home</a>
-              <a href="products.html" class="product-detail-nav2">Products</a>
+              <a href="index.php" class="product-detail-nav1">Home</a>
+              <a href="products.php" class="product-detail-nav2">Products</a>
               <span class="product-detail-nav3">Order</span>
               <div class="product-detail-nav4">
                 <span class="products-text">Cart</span>

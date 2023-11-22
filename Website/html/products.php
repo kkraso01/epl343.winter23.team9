@@ -72,7 +72,7 @@
       <div class="products-container">
         <div class="products-header">
           <header data-thq="thq-navbar" class="products-navbar-interactive">
-            <a href="index.html">
+            <a href="index.php">
             <img
               alt="image"
               src="./Images/MyEcigShopLogoNew.png"
@@ -80,8 +80,8 @@
             />
           </a>
             <nav class="products-links">
-              <a href="index.html" class="products-nav1">Home</a>
-              <a href="products.html" class="products-nav2">Products</a>
+              <a href="index.php" class="products-nav1">Home</a>
+              <a href="products.php" class="products-nav2">Products</a>
               <span class="products-nav3">Order</span>
               <div class="products-nav4">
                 <span class="products-text">Cart</span>
