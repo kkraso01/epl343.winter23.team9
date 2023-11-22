@@ -1,1 +1,4 @@
 We must add the proper constaints to out database regarding deletion of products and other entries
+
+how to execute any of our stored procedures
+EXEC YourProcedure @Param1 = 'value1', @Param2 = 'value2';

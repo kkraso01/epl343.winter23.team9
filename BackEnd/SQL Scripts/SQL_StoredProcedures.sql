@@ -27,6 +27,7 @@ VALUES (
   );
 END
 GO 
+
 CREATE PROCEDURE spLOGIN @UserName VARCHAR(30),
   @Passwd VARCHAR(20) 
   AS 
@@ -40,6 +41,7 @@ END
 ELSE BEGIN PRINT 'Error: Invalid username or password'
 END
 GO 
+
 CREATE PROCEDURE spProduct (@ProductArg CHAR(50) = NULL) 
 AS 
 BEGIN
@@ -49,6 +51,7 @@ FROM [dbo].[PRODUCT]
 WHERE Category = @ProductArg
 END
 GO 
+
 CREATE PROCEDURE spProducts 
 AS 
 BEGIN
@@ -61,6 +64,7 @@ WHERE Category = 'Mod'
   OR Category = 'Coil'
 END
 GO 
+
 CREATE PROCEDURE spAddProduct @Product_Name VARCHAR(50),
   @Product_ID INT,
   @Price FLOAT,
@@ -95,3 +99,20 @@ VALUES (
   );
   PRINT 'Success: Product added'
 END
+GO
+
+CREATE PROCEDURE spDeleteProduct @Product_ID INT
+AS
+BEGIN
+IF NOT EXISTS (
+    SELECT *
+    FROM [dbo].[PRODUCT]
+    WHERE [Product_ID] = @Product_ID
+  ) BEGIN PRINT 'Error: Product ID does not exist.' RETURN
+END
+DELETE FROM YourTable
+    WHERE ID = @EntryID;
+PRINT 'Success: Product deleted'
+END
+
+
