@@ -67,7 +67,7 @@ CREATE PROCEDURE spAddProduct @Product_Name VARCHAR(50),
   @Description VARCHAR(500),
   @Stock INT,
   @Category VARCHAR(30),
-  @Image_path VARCHAR(200),
+  @Image_path VARCHAR(200)
   AS 
   IF EXISTS (
     SELECT *
@@ -79,13 +79,13 @@ IF @Stock < 0 BEGIN PRINT 'Error: Stock cannot be negative' RETURN
 END
 IF @Price < 0 BEGIN PRINT 'Error: Price cannot be negative' RETURN
 END
-IF NOT (@Category='Mod' || @Category='Atomizer' || @Category='Battery' || @Category='Liquid' || @Category='Booster' || @Category='Coil' || @Category='Pod')
+IF NOT (@Category='Mod' OR @Category='Atomizer' OR @Category='Battery' OR @Category='Liquid' OR @Category='Booster' OR @Category='Coil' OR @Category='Pod')
 BEGIN PRINT 'Error: Invalid category' RETURN
 END
 BEGIN
 INSERT INTO [dbo].PRODUCT
 VALUES (
-    @ProductName,
+    @Product_Name,
     @Product_ID,
     @Price,
     @Description,
