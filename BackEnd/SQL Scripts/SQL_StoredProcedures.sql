@@ -110,9 +110,7 @@ IF NOT EXISTS (
     WHERE [Product_ID] = @Product_ID
   ) BEGIN PRINT 'Error: Product ID does not exist.' RETURN
 END
-DELETE FROM YourTable
-    WHERE ID = @EntryID;
+DELETE FROM [dbo].[PRODUCT]
+    WHERE [Product_ID] = @Product_ID
 PRINT 'Success: Product deleted'
 END
-
-
