@@ -1,3 +1,44 @@
+<?php
+session_start();
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Collect input data
+    $phone = $_POST['phone'];
+    $firstname = $_POST['firstname'];
+    $birthdate = $_POST['birthdate'];
+    $lastname = $_POST['lastname'];
+    $password = $_POST['password'];
+    $email = $_POST['email'];
+    $username = $_POST['username'];
+
+    // Database connection
+   // Set session variables
+   $serverName = $_SESSION["serverName"];
+   $connectionOptions = $_SESSION["connectionOptions"];
+     $conn = sqlsrv_connect($serverName, $connectionOptions);
+
+     if($conn === false) {
+       die(print_r(sqlsrv_errors(), true));
+   }
+
+    // Prepare SQL statement
+    $tsql = "{call spSIGNUP (?, ?, ?, ?, ?, ?, ?)}"
+    $params = array($email, $phone, $firstname, $lastname, $username, $password, $birthdate);
+
+    // Execute the query
+    $stmt = sqlsrv_query($conn, $tsql, $params);
+    if ($stmt === false) {
+        die(print_r(sqlsrv_errors(), true));
+    } else {
+        echo "Registration successful.";
+    }
+
+    /* Free query  resources. */
+    sqlsrv_free_stmt($stmt);
+    // Close the connection
+    sqlsrv_close($conn);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -145,9 +186,9 @@
           class="register-page-ecig-picture" />
       </a>
       <header class="register-page-backround">
-        <input type="tel" placeholder="phone" class="register-page-username-member input" />
+        <input type="tel" name="phone" placeholder="phone" class="register-page-username-member input" />
         <input type="text" name="firstname" placeholder="Firstname" class="register-page-username-member1 input" />
-        <input type="date" name="lastname" placeholder="Age" class="register-page-username-admin input" />
+        <input type="date" name="birthdate" placeholder="Age" class="register-page-username-admin input" />
         <input type="text" name="lastname" placeholder="Lastname" class="register-page-username-admin1 input" />
         <input type="password" name="password" placeholder="password" class="register-page-password-admin input" />
         <input type="email" name="email" placeholder="email" class="register-page-password-member input" />
