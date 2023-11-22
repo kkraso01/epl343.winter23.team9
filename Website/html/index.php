@@ -193,7 +193,7 @@ session_start();
           </span>
         </span>
         <div class="main-page-btn-group">
-          <a href="login-page.html" class="main-page-navlink button">
+          <a href="login-page.php" class="main-page-navlink button">
             <span>
               <span class="main-page-text07">Login</span>
               <br />
