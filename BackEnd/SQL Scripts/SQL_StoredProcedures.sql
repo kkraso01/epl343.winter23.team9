@@ -122,6 +122,7 @@ DELETE FROM [dbo].[PRODUCT]
     WHERE [Product_ID] = @Product_ID
 PRINT 'Success: Product deleted'
 END
+GO
 
 CREATE PROCEDURE spEditProduct
   @p_Name VARCHAR(50),
