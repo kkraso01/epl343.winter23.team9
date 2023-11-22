@@ -67,10 +67,11 @@
         $name = $product['Product_Name'];
         $arg = str_replace("&", " AND ", $name);
         $price = $product['Price'];
+        $image = $product['Image_path'];
 
         echo "<div class='col-lg-3 col-sm-6'>
         <div class='product_box'>
-           <img src='' class='prImage'>
+           <img src='$image' class='prImage'>
            <h4 class='bursh_text'>$name</h4>
            <div class='btn_main'>
               <div class='buy_bt'>
