@@ -173,12 +173,10 @@
 }
 
 .admin-edit1-product-img {
-  width: -webkit-fill-available;
-  text-align: center;
-  margin: 20px 0px;
-  padding: 0px 20px;
-  height: 300px;
-  object-fit:contain;
+ width: 105px;
+ height: 97px;
+ object-fit: cover;
+ text-decoration: none;
 }
 
 .admin-edit1-button {

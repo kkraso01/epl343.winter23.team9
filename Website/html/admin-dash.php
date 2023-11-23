@@ -189,7 +189,7 @@ function products()
   <body>
     <link rel="stylesheet" href="./style.css" />
     <div>
-      <link href="./admin.dash.css" rel="stylesheet" />
+      <link href="./admin-dash.css" rel="stylesheet" />
       <link href="./product-list.css" rel="stylesheet" />
       <div class="product-list-container">
         <div class="product-list-header">
