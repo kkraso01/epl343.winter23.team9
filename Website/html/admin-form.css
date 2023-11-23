@@ -259,6 +259,7 @@
   left: 6.5em;
   color: var(--dl-color-gray-black);
   position: absolute;
+  position: flex;
   font-size: 38px;
   box-shadow: rgb(212, 212, 212) 5px 5px 10px 0px;
   font-style: normal;
@@ -326,17 +327,33 @@
   padding-right: 4px;
 }
 
+.form-input {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  padding-left: var(--dl-space-space-oneandhalfunits);
+  padding-right: var(--dl-space-space-oneandhalfunits);
+  padding-top: var(--dl-space-space-unit);
+  padding-bottom: var(--dl-space-space-unit);
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  background-color: var(--dl-color-gray-white);
+
+}
+
 .admin-form-description-text {
   top: 0px;
   flex: 0 0 auto;
   left: left;
   right: 0.5%;
   width: 49%;
-  height: 95%;
+  height: 97.5%;
   display: flex;
   position: absolute;
   align-items: flex-start;
+
 }
+
 
 .admin-form-container2 {
   right: 0px;
@@ -365,7 +382,7 @@
 .admin-form-container4 {
   left: 275px;
   width: 210px;
-  bottom: -61px;
+  bottom: -42px;
   position: absolute;
 }
 
@@ -376,7 +393,7 @@
 .admin-form-submit-button {
   right: 2px;
   width: 502px;
-  bottom: -48px;
+  bottom: -63px;
   height: 50px;
   position: absolute;
   font-size: 0.75rem;
@@ -388,6 +405,9 @@
   padding-bottom: var(--dl-space-space-unit);
   text-transform: uppercase;
   background-color: #000000;
+  border-radius: 8px;
+
+
 }
 
 .admin-form-submit-button:hover {
