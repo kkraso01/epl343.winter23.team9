@@ -127,6 +127,7 @@ function products()
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     
+    <link rel="stylesheet" type="text/css" href="admin-dash.css">
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
     <script src="bootstrap/js/bootstrap.min.js"></script>
     
@@ -189,7 +190,7 @@ function products()
   <body>
     <link rel="stylesheet" href="./style.css" />
     <div>
-      <link href="./admin.dash.css" rel="stylesheet" />
+      <link href="./admin-dash.css" rel="stylesheet" />
       <link href="./product-list.css" rel="stylesheet" />
       <div class="product-list-container">
         <div class="product-list-header">
