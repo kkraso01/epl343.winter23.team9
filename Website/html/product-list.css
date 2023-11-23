@@ -386,7 +386,7 @@
   margin-left: -15px;
 }
 .prImage{
-  width: 430px;
+  width: -webkit-fill-available;
   text-align: center;
   margin: 20px 0px;
   padding: 0px 20px;
