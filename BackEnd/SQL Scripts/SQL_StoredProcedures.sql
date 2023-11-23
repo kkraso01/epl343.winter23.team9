@@ -44,6 +44,20 @@ END
 END
 GO 
 
+CREATE PROCEDURE spADMINLOGIN @UserName VARCHAR(30),
+  @Passwd VARCHAR(20) 
+  AS 
+  BEGIN
+  IF NOT EXISTS (
+    SELECT *
+    FROM [dbo].CUSTOMER
+    WHERE [UserName] = @UserName AND @UserName = 'administrator'
+      AND [Passwd] = HASHBYTES('SHA2_256', @Passwd)
+  )  BEGIN PRINT 'Error: Invalid username or password' PRINT HASHBYTES('SHA2_256', @Passwd)
+END
+END
+GO 
+
 CREATE PROCEDURE spProduct (@ProductArg CHAR(50) = NULL) 
 AS 
 BEGIN
@@ -141,5 +155,13 @@ END
   EXEC spDeleteProduct @Product_ID=@p_ID;
   EXEC spAddProduct @Product_Name=@p_Name, @Product_ID=@p_ID, @Price=@p_Price, @Description=@p_Description, @Stock=@p_Stock, @Category=@p_Category, @Image_path=@p_Image_path;
 
+END
+GO
+
+CREATE PROCEDURE spAllProducts
+AS
+BEGIN
+SELECT P.*
+FROM [dbo].[PRODUCT] P
 END
 GO
