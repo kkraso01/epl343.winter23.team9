@@ -341,6 +341,17 @@
 
 }
 
+.file-input {
+
+  font-size: inherit;
+  padding: 10px 15px;
+  border: 1px solid black;
+  border-radius: 4px;
+  width: 117%;
+  background-color: var(--dl-color-gray-white);
+
+}
+
 .admin-form-description-text {
   top: 0px;
   flex: 0 0 auto;
@@ -380,10 +391,14 @@
 }
 
 .admin-form-container4 {
-  left: 275px;
+  left: 0.5%;
+  top: 101.5%;
   width: 210px;
-  bottom: -42px;
+
+  height: 80px;
   position: absolute;
+
+
 }
 
 .admin-form-container5 {
